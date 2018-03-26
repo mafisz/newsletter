@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +14,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Schema::defaultStringLength(191);
+        \Carbon\Carbon::setLocale('pl');
+        $translator = \Carbon\Carbon::getTranslator();
+        $resources = $translator->getCatalogue('pl')->all('messages');
+        $resources['after'] = ':time temu';
+        $translator->addResource('array', $resources, 'pl');
     }
 
     /**
