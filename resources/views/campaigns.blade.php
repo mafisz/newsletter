@@ -16,7 +16,7 @@
                 <div class="card-body">
                     <ul class="list-group list">
                     @forelse ($campaigns as $campaign)
-                        <li class="list-group-item d-flex justify-content-between align-items-center @if(!$campaign->active) bg-warning @else bg-success text-white @endif">
+                        <li class="list-group-item d-flex justify-content-between align-items-center @if(!$campaign->active) bg-warning @else bg-success text-white @endif @if($campaign->send) bg-info @endif">
                             <div>
                                 <span class="name">{{ $campaign->title }}</span>
                             </div>
@@ -24,8 +24,11 @@
                                 <span>{{ $campaign->list->name }}</span>
                             </div>
                             <div>
-                                <span>{{ __('Start date') }}: {{ \Carbon\Carbon::now()->diffForHumans($campaign->send_time) }}</span>
-                                {{-- <span>{{ $campaign->send_time->format('Y-m-d H:i') }}</span> --}}
+                                @if(!$campaign->send)
+                                    <span>{{ __('Start date') }}: {{ \Carbon\Carbon::now()->diffForHumans($campaign->send_time) }}</span>
+                                @else
+                                    <span>{{ __('Sended') }}: {{ \Carbon\Carbon::now()->diffForHumans($campaign->send_time) }}</span>
+                                @endif
                             </div>
                             <div>
                                 <span>{{ __('Updated') }}: {{ \Carbon\Carbon::now()->diffForHumans($campaign->updated_at) }}</span>

@@ -53,7 +53,7 @@ class SendNewsletter extends Command
                 Mail::to($member->member->email)->queue(new Newsletter($campaign->title, $campaign->content));
             }
 
-            // $campaign->send = 1;
+            $campaign->send = 1;
             $campaign->save();
         }
     }

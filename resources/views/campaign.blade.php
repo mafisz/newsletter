@@ -73,7 +73,7 @@
                         </div>
 
                         <div class="form-group">
-                            <textarea class="form-control tinymce" rows="25" name="content">{{ $campaign->content }}</textarea>
+                            <textarea class="form-control tinymce" rows="25" name="content" required>{{ $campaign->content }}</textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>
                     </div>

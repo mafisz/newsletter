@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Campaign;
+use App\Member;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $campaigns = Campaign::orderBy('title', 'asc')->get();
+        $members = Member::get();
+
+        $jobs = \DB::select('select * from jobs');
+
+        return view('home', compact('campaigns', 'members', 'jobs'));
     }
 }
