@@ -46,3 +46,15 @@ Breadcrumbs::register('list', function ($breadcrumbs, $list) {
     $breadcrumbs->parent('mailing_lists');
     $breadcrumbs->push($list->name, route('list', $list->id));
 });
+
+// Home > Campaigns
+Breadcrumbs::register('campaigns', function ($breadcrumbs) {
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(__('Campaigns'), route('campaigns'));
+});
+
+// Home > Campaigns > [campaign]
+Breadcrumbs::register('campaign', function ($breadcrumbs, $campaign) {
+    $breadcrumbs->parent('campaigns');
+    $breadcrumbs->push($campaign->title, route('campaign', $campaign->id));
+});

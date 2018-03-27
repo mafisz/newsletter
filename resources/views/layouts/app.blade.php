@@ -46,6 +46,7 @@
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                             {{-- <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li> --}}
                         @else
+                            <li><a class="nav-link" href="{{ route('campaigns') }}">{{ __('Campaigns') }}</a></li>
                             <li><a class="nav-link" href="{{ route('templates') }}">{{ __('Templates') }}</a></li>
                             <li><a class="nav-link" href="{{ route('members') }}">{{ __('Members') }}</a></li>
                             <li><a class="nav-link" href="{{ route('mailing_lists') }}">{{ __('Mailing lists') }}</a></li>

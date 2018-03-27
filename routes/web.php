@@ -57,3 +57,11 @@ Route::get('template/{id}', 'TemplateController@show')->name('template');
 Route::post('addTemplate', 'TemplateController@store')->name('addTemplate');
 Route::post('deleteTemplate', 'TemplateController@delete')->name('deleteTemplate');
 Route::post('editTemplate', 'TemplateController@edit')->name('editTemplate');
+
+// Campaigns
+Route::get('campaigns', 'CampaignController@index')->name('campaigns');
+Route::get('campaign/{id}', 'CampaignController@show')->name('campaign');
+Route::post('addCampaign', 'CampaignController@store')->name('addCampaign');
+Route::post('deleteCampaign', 'CampaignController@delete')->name('deleteCampaign');
+Route::post('editCampaign', 'CampaignController@edit')->name('editCampaign');
+Route::post('campaignStatus', 'CampaignController@status')->name('campaignStatus');

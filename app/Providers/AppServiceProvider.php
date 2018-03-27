@@ -19,6 +19,7 @@ class AppServiceProvider extends ServiceProvider
         $translator = \Carbon\Carbon::getTranslator();
         $resources = $translator->getCatalogue('pl')->all('messages');
         $resources['after'] = ':time temu';
+        $resources['before'] = 'za :time';
         $translator->addResource('array', $resources, 'pl');
     }
 
