@@ -85,5 +85,6 @@
     "Change campaign status": "Zmienić status kampani",
     "Sended": "Wysłane",
     "Members count": "Ilość subskrybentów",
-    "Mails in queue": "Ilość maili w kolejce"
+    "Mails in queue": "Ilość maili w kolejce",
+    "summary": "podsumowanie"
 }

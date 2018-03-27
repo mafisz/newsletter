@@ -9,7 +9,7 @@
                 <div class="col-sm-8">
                     <div class="card">
                         <div class="card-header bg-secondary text-white">
-                            {{ __('Campaigns') }}
+                            {{ __('Campaigns') }} - {{ __('summary') }}
                         </div>
 
                         <div class="card-body">
