@@ -29,3 +29,20 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+
+// Members
+Route::get('members', 'MemberController@index')->name('members');
+Route::get('member/{id}', 'MemberController@show')->name('member');
+Route::post('addMember', 'MemberController@store')->name('addMember');
+Route::post('addMembersFile', 'MemberController@storeFromFile')->name('addMembersFile');
+Route::post('deleteMember', 'MemberController@delete')->name('deleteMember');
+
+// Mailing lists
+Route::get('mailing_lists', 'ListController@index')->name('mailing_lists');
+Route::get('list/{id}', 'ListController@show')->name('list');
+Route::post('addList', 'ListController@store')->name('addList');
+Route::post('deleteList', 'ListController@delete')->name('deleteList');
+Route::post('deleteListFull', 'ListController@deleteFull')->name('deleteListFull');
+
+Route::post('addListMember', 'ListController@addMember')->name('addListMember');
+Route::post('addListMembersFile', 'ListController@addFromFile')->name('addListMembersFile');
