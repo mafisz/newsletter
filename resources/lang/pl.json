@@ -1,4 +1,5 @@
 {
+    "Home": "Strona główna",
     "E-Mail Address": "Adres email",
     "Reset Password": "Reset hasła",
     "Password": "Hasło",
@@ -20,6 +21,7 @@
     "Delete": "Usuń",
     "Edit": "Edytuj",
     "Search": "Szukaj",
+    "Save": "Zapisz",
     "Delete member": "Usuń członka",
     "Close": "Zamknij",
     "No list": "Brak list",
@@ -43,5 +45,21 @@
     "Add members from file": "Dodaj członków z pliku",
     "File": "Plik",
     ".txt file with comma separated emails": "Plik .txt z adresami email oddzielonymi przecinkami",
-    "New members count: :count": "Liczba nowych członków: :count"
+    "New members count: :count": "Liczba nowych członków: :count",
+    "Templates": "Szablony",
+    "Updated": "Ostatnia edycja",
+    "All templates": "Wszystkie szablony",
+    "No templates": "Brak szablonów",
+    "Add template": "Dodaj szablon",
+    "Delete template": "Usuń szablon",
+    "Template doesn't exists": "Szablon nie istnieje",
+    "Template has been created": "Szablon został utworzony",
+    "Template has been deleted": "Szablon został usunięty",
+    "Are You sure to delete template": "Czy na pewno chcesz usunąć szablon",
+    "Settings": "Ustawienia",
+    "Change password": "Zmień hasło",
+    "Current password": "Obecne hasło",
+    "New password": "Nowe hasło",
+    "Last change": "Ostatnio zmienione",
+    "Template has been updated": "Szablon został zapisany"
 }

@@ -46,6 +46,7 @@
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                             {{-- <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li> --}}
                         @else
+                            <li><a class="nav-link" href="{{ route('templates') }}">{{ __('Templates') }}</a></li>
                             <li><a class="nav-link" href="{{ route('members') }}">{{ __('Members') }}</a></li>
                             <li><a class="nav-link" href="{{ route('mailing_lists') }}">{{ __('Mailing lists') }}</a></li>
                             <li class="nav-item dropdown">
@@ -54,6 +55,7 @@
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('settings') }}">Ustawienia</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -73,7 +75,7 @@
 
         @include('messages')
 
-        <main class="py-4">
+        <main class="pb-4">
             @yield('content')
         </main>
     </div>

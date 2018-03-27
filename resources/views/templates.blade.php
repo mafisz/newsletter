@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-{{ Breadcrumbs::render('mailing_lists') }}
+{{ Breadcrumbs::render('templates') }}
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card" id="items">
                 <div class="card-header bg-secondary text-white d-flex justify-content-between align-items-center">
-                    {{ __('All lists') }}
+                    {{ __('All templates') }}
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2 search" type="search" placeholder="{{ __('Name') }}" aria-label="Search">
                     </form>
@@ -15,23 +15,21 @@
 
                 <div class="card-body">
                     <ul class="list-group list">
-                    @forelse ($lists as $list)
+                    @forelse ($templates as $template)
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <div>
-                                <span class="name">{{ $list->name }}</span>
-                                <span class="badge badge-info badge-pill">{{ $list->members->count() }}</span>
+                                <span class="name">{{ $template->name }}</span>
                             </div>
                             <div>
-                                <span class="text-muted">{{ __('Added') }}: {{ \Carbon\Carbon::now()->diffForHumans($list->created_at) }}</span>
+                                <span class="text-muted">{{ __('Updated') }}: {{ \Carbon\Carbon::now()->diffForHumans($template->updated_at) }}</span>
                                 <div class="btn-group ml-4" role="group">
-                                    <a href="{{ route('list', $list->id) }}" class="btn btn-primary btn-sm">{{ __('Edit') }}</a>
-                                    <button type="button" class="btn btn-warning btn-sm delete-btn" data-id="{{ $list->id }}" data-name="{{ $list->name }}" data-toggle="modal" data-target="#deleteList">{{ __('Delete list without Members') }}</button>
-                                    <button type="button" class="btn btn-danger btn-sm delete-btn" data-id="{{ $list->id }}" data-name="{{ $list->name }}" data-toggle="modal" data-target="#deleteListFull">{{ __('Delete list with Members') }}</button>
+                                    <a href="{{ route('template', $template->id) }}" class="btn btn-primary btn-sm">{{ __('Edit') }}</a>
+                                    <button type="button" class="btn btn-danger btn-sm delete-btn" data-id="{{ $template->id }}" data-name="{{ $template->name }}" data-toggle="modal" data-target="#deleteTemplate">{{ __('Delete') }}</button>
                                 </div>
                             </div>
                         </li>
                     @empty
-                        <li class="list-group-item">{{ __('No lists') }}</li>
+                        <li class="list-group-item">{{ __('No templates') }}</li>
                     @endforelse
                     </ul>
                 </div>
@@ -39,10 +37,10 @@
         </div>
         <div class="col-md-4">
             <div class="card mt-md-0 mt-4">
-                <div class="card-header bg-secondary text-white">{{ __('Add list') }}</div>
+                <div class="card-header bg-secondary text-white">{{ __('Add template') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('addList') }}">
+                    <form method="POST" action="{{ route('addTemplate') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -73,6 +71,5 @@
     </div>
 </div>
 
-@include('modals.deleteList')
-@include('modals.deleteListFull')
+@include('modals.deleteTemplate')
 @endsection

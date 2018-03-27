@@ -178,6 +178,7 @@ class ListController extends Controller
 
         return redirect()->back()->with('success', __('New members count: :count', ['count' => $i]));
     }
+
     /**
      * check if member already subcribe list
      * @param  [int]  $member_id

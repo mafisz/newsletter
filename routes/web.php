@@ -13,7 +13,11 @@
 
 // Auth::routes();
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('home');
+
+// Settings
+Route::get('settings', 'UserController@settings')->name('settings');
+Route::post('changePassword', 'UserController@changePassword')->name('changePassword');
 
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -46,3 +50,10 @@ Route::post('deleteListFull', 'ListController@deleteFull')->name('deleteListFull
 
 Route::post('addListMember', 'ListController@addMember')->name('addListMember');
 Route::post('addListMembersFile', 'ListController@addFromFile')->name('addListMembersFile');
+
+// Templates
+Route::get('templates', 'TemplateController@index')->name('templates');
+Route::get('template/{id}', 'TemplateController@show')->name('template');
+Route::post('addTemplate', 'TemplateController@store')->name('addTemplate');
+Route::post('deleteTemplate', 'TemplateController@delete')->name('deleteTemplate');
+Route::post('editTemplate', 'TemplateController@edit')->name('editTemplate');
