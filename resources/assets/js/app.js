@@ -19,6 +19,12 @@ $('.status-btn').click(function(){
     $('.status-name').html($(this).data('name'));
 })
 
+$('.delete-btn-2').click(function(){
+    $('.delete-id').val($(this).data('id'));
+    $('.delete-id-2').val($(this).data('id2'));
+    $('.delete-name').html($(this).data('name'));
+})
+
 $(window).on('load', function(){
     var options = {
       valueNames: ['name']

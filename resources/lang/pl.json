@@ -43,6 +43,8 @@
     "List doesn't exists": "Lista nie istnieje",
     "List has been deleted": "Lista została usunięta",
     "Member has been added to list": "Subskrybent został dodany do listy",
+    "Member has been removed from list": "Subskrybent został usunięty z listy",
+    "Member doesn't subscribe this list": "Subskrybent nie należy do wybranej listy",
     "Member already subscribe this list": "Subskrybent należy już do wybranej listy",
     "Add members from file": "Dodaj subskrybentów z pliku",
     "File": "Plik",

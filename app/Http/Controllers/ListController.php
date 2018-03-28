@@ -141,7 +141,7 @@ class ListController extends Controller
     public function addFromFile(Request $request)
     {
         $this->validate($request, [
-            'listId' => 'required|string|max:255|exists:member_lists,id',
+            'listId' => 'required|exists:member_lists,id',
             'file' => 'required|file',
         ]);
 
@@ -177,6 +177,28 @@ class ListController extends Controller
         }
 
         return redirect()->back()->with('success', __('New members count: :count', ['count' => $i]));
+    }
+
+    /**
+     * Delete member from list
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function deleteMember(Request $request)
+    {
+        $this->validate($request, [
+            'listId' => 'required|exists:member_lists,id',
+            'memberId' => 'required|exists:members,id',
+        ]);
+
+        $is = $this->isMember($request->memberId, $request->listId);
+
+        if($is){
+            $is->delete();
+            return redirect()->back()->with('success', __('Member has been removed from list'));
+        }
+
+        return redirect()->back()->with('warning', __('Member doesn\'t subscribe this list'));
     }
 
     /**

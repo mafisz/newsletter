@@ -17,7 +17,7 @@
                             {{ $member->member->email }}
                             <div>
                                 <div class="btn-group ml-4" role="group">
-                                    <button type="button" class="btn btn-danger btn-sm delete-btn" data-id="{{ $member->id }}" data-name="{{ $member->email }}" data-toggle="modal" data-target="#deleteMember">{{ __('Delete') }}</button>
+                                    <button type="button" class="btn btn-danger btn-sm delete-btn-2" data-id="{{ $member->member->id }}" data-id2="{{ $list->id }}" data-name="{{ $member->member->email }}" data-toggle="modal" data-target="#deleteListMember">{{ __('Delete') }}</button>
                                 </div>
                             </div>
                         </li>
@@ -100,5 +100,5 @@
     </div>
 </div>
 
-@include('modals.deleteMember')
+@include('modals.deleteListMember')
 @endsection

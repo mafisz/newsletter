@@ -50,6 +50,7 @@ Route::post('deleteListFull', 'ListController@deleteFull')->name('deleteListFull
 
 Route::post('addListMember', 'ListController@addMember')->name('addListMember');
 Route::post('addListMembersFile', 'ListController@addFromFile')->name('addListMembersFile');
+Route::post('deleteListMember', 'ListController@deleteMember')->name('deleteListMember');
 
 // Templates
 Route::get('templates', 'TemplateController@index')->name('templates');
