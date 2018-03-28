@@ -118,6 +118,7 @@ class ListController extends Controller
         if(!$member){
             $member = new Member();
             $member->email = $request->email;
+            $member->code = str_random(60);
             $member->save();
         }
 
@@ -164,6 +165,7 @@ class ListController extends Controller
             if(!$member){
                 $member = new Member();
                 $member->email = $email;
+                $member->code = str_random(60);
                 $member->save();
             }
 

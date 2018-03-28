@@ -14,15 +14,20 @@ class Newsletter extends Mailable
 
     public $title;
     public $content;
+    public $mail;
+    public $code;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($title, $content)
+    public function __construct($title, $content, $mail, $code)
     {
         $this->title = $title;
         $this->content = $content;
+        $this->mail = $mail;
+        $this->code = $code;
     }
 
     /**

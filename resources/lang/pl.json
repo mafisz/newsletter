@@ -91,5 +91,6 @@
     "summary": "podsumowanie",
     "Change SMTP configuration": "Zmień konfigurację SMTP",
     "Send test email": "Wyślij maila testowego",
-    "Send": "Wyślij"
+    "Send": "Wyślij",
+    "Email has been deleted from newsletter": "Adres email został usunięty z newslettera"
 }

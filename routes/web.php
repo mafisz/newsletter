@@ -43,6 +43,9 @@ Route::post('addMember', 'MemberController@store')->name('addMember');
 Route::post('addMembersFile', 'MemberController@storeFromFile')->name('addMembersFile');
 Route::post('deleteMember', 'MemberController@delete')->name('deleteMember');
 
+Route::get('unsubscribe', 'MemberController@unsubscribe')->name('unsubscribe');
+Route::get('unsubscribe_success', 'MemberController@unsubscribe_success')->name('unsubscribe_success');
+
 // Mailing lists
 Route::get('mailing_lists', 'ListController@index')->name('mailing_lists');
 Route::get('list/{id}', 'ListController@show')->name('list');

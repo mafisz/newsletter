@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Member;
 use App\MemberList;
+use Illuminate\Support\Facades\Input;
 
 class MemberController extends Controller
 {
@@ -15,7 +16,7 @@ class MemberController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth', ['except' => ['unsubscribe', 'unsubscribe_success']]);
     }
 
     /**
@@ -60,6 +61,7 @@ class MemberController extends Controller
 
         $member = new Member();
         $member->email = $request->email;
+        $member->code = str_random(60);
         $member->save();
 
         return redirect()->back()->with('success', __('Member has been created'));
@@ -94,6 +96,7 @@ class MemberController extends Controller
             $exist = Member::where('email', $email)->first();
             if(!$exist){
                 $member = new Member();
+                $member->code = str_random(60);
                 $member->email = $email;
                 $member->save();
                 $i++;
@@ -102,8 +105,6 @@ class MemberController extends Controller
 
         return redirect()->back()->with('success', __('New members count: :count', ['count' => $i]));
     }
-
-    
 
     /**
      * Delete member
@@ -120,4 +121,33 @@ class MemberController extends Controller
 
         return redirect()->back()->with('success', __('Member has been deleted'));
     }
+
+    /**
+     * Unsubscribe member
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function unsubscribe()
+    {
+        if(Input::has('email') && Input::has('code')){
+            $email = Input::get('email');
+            $code = Input::get('code');
+            
+            $member = Member::where('code', $code)->where('email', $email)->delete();
+            return redirect()->route('unsubscribe_success');
+        }
+
+        return 'błąd';
+    }
+
+    /**
+     * Unsubscribe success
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function unsubscribe_success()
+    {
+        return view('unsubscribe_success');
+    }
+
 }
