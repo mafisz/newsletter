@@ -18,6 +18,8 @@ Route::get('/', 'HomeController@index')->name('home');
 // Settings
 Route::get('settings', 'UserController@settings')->name('settings');
 Route::post('changePassword', 'UserController@changePassword')->name('changePassword');
+Route::post('changeSmtp', 'UserController@changeSmtp')->name('changeSmtp');
+Route::post('testSmtp', 'UserController@testSmtp')->name('testSmtp');
 
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

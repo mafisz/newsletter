@@ -88,5 +88,8 @@
     "Sended": "Wysłane",
     "Members count": "Ilość subskrybentów",
     "Mails in queue": "Ilość maili w kolejce",
-    "summary": "podsumowanie"
+    "summary": "podsumowanie",
+    "Change SMTP configuration": "Zmień konfigurację SMTP",
+    "Send test email": "Wyślij maila testowego",
+    "Send": "Wyślij"
 }

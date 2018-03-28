@@ -36,7 +36,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        {{-- <div class="col-md-4">
             <div class="card mt-md-0 mt-4">
                 <div class="card-header bg-secondary text-white">{{ __('Add member') }}</div>
                 <div class="card-body">
@@ -100,7 +100,7 @@
                     </form>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
 

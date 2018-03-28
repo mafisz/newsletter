@@ -7,22 +7,18 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class Newsletter extends Mailable
+class test extends Mailable
 {
     use Queueable, SerializesModels;
 
-
-    public $title;
-    public $content;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($title, $content)
+    public function __construct()
     {
-        $this->title = $title;
-        $this->content = $content;
+        //
     }
 
     /**
@@ -32,7 +28,7 @@ class Newsletter extends Mailable
      */
     public function build()
     {
-        return $this->subject($this->title)
-                ->view('emails.newsletter');
+        return $this->subject('Mail testowy')
+                ->view('emails.test');
     }
 }
