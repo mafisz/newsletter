@@ -35,12 +35,12 @@ class UserController extends Controller
         ]);
 
         if (!Hash::check($request->current_password, auth()->user()->password))
-            return redirect()->back()->withInput()->withErrors('Podane hasło jest nieprawidłowe.');
+            return redirect()->back()->withInput()->withErrors( __('Wrong password'));
         
         auth()->user()->password = Hash::make($request->password);
         auth()->user()->save();
 
-        return redirect()->back()->with('success','Hasło zostało zmienione.');
+        return redirect()->back()->with('success', __('Password has been changed'));
     }
 
     public function changeSmtp(Request $request)
@@ -70,7 +70,7 @@ class UserController extends Controller
             }
         }
 
-        return redirect()->back()->with('success','Ustawienia zostały zmienione.');
+        return redirect()->back()->with('success', __('Settings saved'));
     }
 
     public function testSmtp(Request $request)
@@ -80,8 +80,8 @@ class UserController extends Controller
         ]);
 
         try{
-            $a = Mail::to($request->test_mail)->send(new Test());
-            return redirect()->back()->with('success','Mail został wysłany.');
+            Mail::to($request->test_mail)->send(new Test());
+            return redirect()->back()->with('success', __('Mail has been send'));
         }
         catch(\Exception $e){
             return redirect()->back()->with('danger', $e->getMessage());

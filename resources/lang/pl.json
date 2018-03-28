@@ -92,5 +92,9 @@
     "Change SMTP configuration": "Zmień konfigurację SMTP",
     "Send test email": "Wyślij maila testowego",
     "Send": "Wyślij",
-    "Email has been deleted from newsletter": "Adres email został usunięty z newslettera"
+    "Email has been deleted from newsletter": "Adres email został usunięty z newslettera",
+    "Wrong password": "Podane hasło jest nieprawidłowe",
+    "Password has been changed": "Hasło zostało zmienione",
+    "Settings saved": "Ustawienia zostały zapisane",
+    "Mail has been send": "Mail został wysłany"
 }
