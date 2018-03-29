@@ -96,5 +96,6 @@
     "Wrong password": "Podane hasło jest nieprawidłowe",
     "Password has been changed": "Hasło zostało zmienione",
     "Settings saved": "Ustawienia zostały zapisane",
-    "Mail has been send": "Mail został wysłany"
+    "Mail has been send": "Mail został wysłany",
+    "Settings SMTP": "Ustawienia SMTP"
 }

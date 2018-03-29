@@ -17,6 +17,7 @@ Route::get('/', 'HomeController@index')->name('home');
 
 // Settings
 Route::get('settings', 'UserController@settings')->name('settings');
+Route::get('settingsSmtp', 'UserController@settingsSmtp')->name('settingsSmtp');
 Route::post('changePassword', 'UserController@changePassword')->name('changePassword');
 Route::post('changeSmtp', 'UserController@changeSmtp')->name('changeSmtp');
 Route::post('testSmtp', 'UserController@testSmtp')->name('testSmtp');

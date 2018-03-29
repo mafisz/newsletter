@@ -22,9 +22,15 @@ class UserController extends Controller
     
     public function settings()
     {
+        return view('settings');
+    }
+
+    public function settingsSmtp()
+    {
         $mail_config = Config::get();
         $mail_config = $mail_config->keyBy('key');
-        return view('settings', compact('mail_config'));
+
+        return view('settingsSmtp', compact('mail_config'));
     }
 
     public function changePassword(Request $request)

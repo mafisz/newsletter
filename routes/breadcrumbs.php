@@ -11,6 +11,12 @@ Breadcrumbs::register('settings', function ($breadcrumbs) {
     $breadcrumbs->push(__('Settings'), route('settings'));
 });
 
+// Home > SettingsSmtp
+Breadcrumbs::register('settingsSmtp', function ($breadcrumbs) {
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push(__('Settings SMTP'), route('settingsSmtp'));
+});
+
 // Home > Templates
 Breadcrumbs::register('templates', function ($breadcrumbs) {
     $breadcrumbs->parent('home');
