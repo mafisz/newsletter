@@ -11,10 +11,16 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+mix.setPublicPath('public_html/');
 
-mix.copy('node_modules/tinymce/skins', 'public/js/skins');
-mix.copy('node_modules/tinymce/plugins', 'public/js/plugins');
-mix.copy('node_modules/tinymce/themes', 'public/js/themes');
-mix.copy('node_modules/tinymce/langs', 'public/js/langs');
+mix.js('resources/assets/js/app.js', 'js')
+   .sass('resources/assets/sass/app.scss', 'css');
+
+mix.copy('node_modules/tinymce/skins', 'js/skins');
+mix.copy('node_modules/tinymce/plugins', 'js/plugins');
+mix.copy('node_modules/tinymce/themes', 'js/themes');
+mix.copy('node_modules/tinymce/langs', 'js/langs');
+
+if (mix.inProduction()) {
+    mix.version();
+}

@@ -11,16 +11,14 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    {{-- <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js" defer></script> --}}
-
+    <script src="{{ mix('/js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&amp;subset=latin-ext" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
 </head>
 <body>
     <div id="app">
@@ -81,7 +79,7 @@
             @yield('content')
         </main>
     </div>
-
+    <p class="craft text-muted">Crafted by <a href="//efabryka.net" title="efabryka.net" alt="efabryka" target="_blank" rel="nofollow">efabryka.net</a></p>
     @yield('script')
 </body>
 </html>

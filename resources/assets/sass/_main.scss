@@ -1,3 +1,7 @@
+body{
+    position: relative;
+    min-height: 100vh;
+}
 .dropdown-menu{
     left: initial;
     right: 0;
@@ -5,4 +9,24 @@
 
 .card{
     box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.15);
+}
+
+.craft{
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    margin: 0;
+    font-size: 12px;
+    opacity: .4;
+    transition: opacity .3s ease;
+
+    a,
+    a:hover{
+        color: #ff6700;
+        text-decoration: none;
+    }
+
+    &:hover{
+        opacity: 1;
+    }
 }
