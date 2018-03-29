@@ -59,7 +59,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="title" class="col-sm-4 col-form-label text-md-right">{{ __('Title') }}</label>
+                            <label for="title" class="col-sm-4 col-form-label text-md-right">{{ __('Email title') }}</label>
 
                             <div class="col-md-8">
                                 <input id="title" type="text" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" name="title" value="{{ old('title') }}" required>

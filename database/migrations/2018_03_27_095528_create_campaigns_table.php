@@ -16,7 +16,7 @@ class CreateCampaignsTable extends Migration
         Schema::create('campaigns', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->text('content');
+            $table->text('content')->nullable();
             $table->integer('list_id')->unsigned();
             $table->dateTime('send_time');
             $table->boolean('active')->default(false);

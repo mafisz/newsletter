@@ -101,5 +101,6 @@
     "Active": "Aktywny",
     "Not active": "Nie aktywny",
     "Member status": "Status subskrybenta",
-    "Status has been changed": "Status został zmieniony"
+    "Status has been changed": "Status został zmieniony",
+    "Email title": "Tytuł emaila"
 }
