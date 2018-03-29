@@ -67,6 +67,44 @@
                     </form>
                 </div>
             </div>
+
+            <div class="card mt-4">
+                <div class="card-header bg-secondary text-white">{{ __('Member status') }}</div>
+
+                <div class="card-body">
+                    <h3 class="text-center">
+                        @if($member->active)
+                            <span class="text-success">{{ __('Active') }}</span>
+                        @else
+                            <span class="text-danger">{{ __('Not active') }}</span>
+                        @endif
+                    </h3>
+                    <form method="POST" action="{{ route('memberStatus') }}">
+                        @csrf
+
+                        <div class="form-group row">
+                            <div class="col-md-8">
+                                <input type="hidden" name="memberId" value="{{ $member->id }}" >
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-4 offset-md-4">
+                                @if($member->active)
+                                    <button type="submit" class="btn btn-primary btn-block">
+                                        {{ __('Deactivate') }}
+                                    </button>
+                                @else
+                                    <button type="submit" class="btn btn-success btn-block">
+                                        {{ __('Activate') }}
+                                    </button>
+                                @endif
+                                
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -43,6 +43,7 @@ Route::get('member/{id}', 'MemberController@show')->name('member');
 Route::post('addMember', 'MemberController@store')->name('addMember');
 Route::post('addMembersFile', 'MemberController@storeFromFile')->name('addMembersFile');
 Route::post('deleteMember', 'MemberController@delete')->name('deleteMember');
+Route::post('memberStatus', 'MemberController@memberStatus')->name('memberStatus');
 
 Route::get('unsubscribe', 'MemberController@unsubscribe')->name('unsubscribe');
 Route::get('unsubscribe_success', 'MemberController@unsubscribe_success')->name('unsubscribe_success');

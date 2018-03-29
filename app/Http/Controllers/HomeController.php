@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         $campaigns = Campaign::orderBy('title', 'asc')->get();
-        $members = Member::get();
+        $members = Member::where('active', true)->get();
 
         $jobs = \DB::select('select * from jobs');
 

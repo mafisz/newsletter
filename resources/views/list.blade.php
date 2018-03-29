@@ -16,6 +16,11 @@
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             {{ $member->member->email }}
                             <div>
+                                @if($member->member->active)
+                                    <span class="text-success">{{ __('Active') }}</span>
+                                @else
+                                    <span class="text-danger">{{ __('Not active') }}</span>
+                                @endif
                                 <div class="btn-group ml-4" role="group">
                                     <button type="button" class="btn btn-danger btn-sm delete-btn-2" data-id="{{ $member->member->id }}" data-id2="{{ $list->id }}" data-name="{{ $member->member->email }}" data-toggle="modal" data-target="#deleteListMember">{{ __('Delete') }}</button>
                                 </div>

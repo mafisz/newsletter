@@ -22,6 +22,12 @@
                                 <span class="badge badge-info badge-pill">{{ $member->lists->count() }}</span>
                             </div>
                             <div>
+                                @if($member->active)
+                                    <span class="text-success">{{ __('Active') }}</span>
+                                @else
+                                    <span class="text-danger">{{ __('Not active') }}</span>
+                                @endif
+                                |
                                 <span class="text-muted">{{ __('Added') }}: {{ \Carbon\Carbon::now()->diffForHumans($member->created_at) }}</span>
                                 <div class="btn-group ml-4" role="group">
                                     <a href="{{ route('member', $member->id) }}" class="btn btn-primary btn-sm">{{ __('Edit') }}</a>

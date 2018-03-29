@@ -42,8 +42,8 @@
                         </div>
 
                         <div class="card-body">
-                            <h3>{{ __('Members count') }} : {{ $members->count() }}</h3>
-                            <h3>{{ __('Mails in queue') }} : {{ count($jobs) }}</h3>
+                            <p>{{ __('Active members count') }} : {{ $members->count() }}</p>
+                            <p>{{ __('Mails in queue') }} : {{ count($jobs) }}</p>
                         </div>
                     </div>
                 </div>

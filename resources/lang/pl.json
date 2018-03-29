@@ -86,7 +86,7 @@
     "Campaign status": "Status kampani",
     "Change campaign status": "Zmienić status kampani",
     "Sended": "Wysłane",
-    "Members count": "Ilość subskrybentów",
+    "Active members count": "Ilość aktywnych subskrybentów",
     "Mails in queue": "Ilość maili w kolejce",
     "summary": "podsumowanie",
     "Change SMTP configuration": "Zmień konfigurację SMTP",
@@ -97,5 +97,9 @@
     "Password has been changed": "Hasło zostało zmienione",
     "Settings saved": "Ustawienia zostały zapisane",
     "Mail has been send": "Mail został wysłany",
-    "Settings SMTP": "Ustawienia SMTP"
+    "Settings SMTP": "Ustawienia SMTP",
+    "Active": "Aktywny",
+    "Not active": "Nie aktywny",
+    "Member status": "Status subskrybenta",
+    "Status has been changed": "Status został zmieniony"
 }

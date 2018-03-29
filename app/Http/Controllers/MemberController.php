@@ -133,7 +133,10 @@ class MemberController extends Controller
             $email = Input::get('email');
             $code = Input::get('code');
             
-            $member = Member::where('code', $code)->where('email', $email)->delete();
+            $member = Member::where('code', $code)->where('email', $email)->first();
+            $member->active = false;
+            $member->save();
+
             return redirect()->route('unsubscribe_success');
         }
 
@@ -150,4 +153,16 @@ class MemberController extends Controller
         return view('unsubscribe_success');
     }
 
+    public function memberStatus(Request $request)
+    {
+        $this->validate($request, [
+            'memberId' => 'required|exists:members,id',
+        ]);
+
+        $member = Member::where('id', $request->memberId)->first();
+        $member->active = $member->active?0:1;
+        $member->save();
+
+        return redirect()->back()->with('success', __('Status has been changed'));
+    }
 }

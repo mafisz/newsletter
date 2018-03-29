@@ -15,6 +15,7 @@ class UpdateMembersTable extends Migration
     {
         Schema::table('members', function (Blueprint $table) {
             $table->string('code')->nullable();
+            $table->boolean('active')->default(true);
         });
     }
 
@@ -25,8 +26,9 @@ class UpdateMembersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('members', function (Blueprint $table) {
             $table->dropColumn('code');
+            $table->dropColumn('active');
         });
     }
 }
