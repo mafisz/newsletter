@@ -14,6 +14,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
          Commands\SendNewsletter::class,
+         Commands\SendEmails::class,
     ];
 
     /**
@@ -25,6 +26,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('newsletter:send')->everyMinute();
+        $schedule->command('email:send')->everyMinute();
     }
 
     /**
