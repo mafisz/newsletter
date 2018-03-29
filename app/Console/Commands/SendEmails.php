@@ -37,7 +37,7 @@ class SendEmails extends Command
      */
     public function handle()
     {
-        for($i = 0; $i < 10; $i++)
+        for($i = 0; $i < env('MAILS_ONE_TASK', 10); $i++)
             $this->call('queue:work',['--once' => true]);
     }
 }
