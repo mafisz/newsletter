@@ -52,7 +52,6 @@ class UserController extends Controller
     public function changeSmtp(Request $request)
     {
         $this->validate($request, [
-            'mail_driver' => 'required',
             'mail_host' => 'required',
             'mail_port' => 'required',
             'mail_username' => 'required',

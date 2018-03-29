@@ -26,9 +26,6 @@ class AppServiceProvider extends ServiceProvider
         $mail_config = Config::get();
         $mail_config = $mail_config->keyBy('key');
 
-        if($mail_config->get('mail_driver'))
-            config(['mail.driver' => $mail_config->get('mail_driver')->value]);
-
         if($mail_config->get('mail_host'))
             config(['mail.host' => $mail_config->get('mail_host')->value]);
 

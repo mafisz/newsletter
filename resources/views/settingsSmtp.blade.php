@@ -12,23 +12,6 @@
                 <div class="card-body">
                     <form class="form-horizontal" method="POST" action="{{ route('changeSmtp') }}">
                         {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('mail_driver') ? ' has-error' : '' }}">
-                            <label for="mail_driver">{{ __('MAIL_DRIVER') }}</label>
-                            <input type="text" class="form-control" name="mail_driver"
-                                @if($mail_config->has('mail_driver')) 
-                                    value="{{ $mail_config->get('mail_driver')->value }}"
-                                @else
-                                    value={{ env('MAIL_DRIVER') }}
-                                @endif
-                            required>
-
-                            @if ($errors->has('mail_driver'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('mail_driver') }}</strong>
-                                </span>
-                            @endif
-                        </div>
                         
                         <div class="form-group{{ $errors->has('mail_host') ? ' has-error' : '' }}">
                             <label for="mail_host">{{ __('MAIL_HOST') }}</label>
@@ -43,23 +26,6 @@
                             @if ($errors->has('mail_host'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('mail_host') }}</strong>
-                                </span>
-                            @endif
-                        </div>
-
-                        <div class="form-group{{ $errors->has('mail_port') ? ' has-error' : '' }}">
-                            <label for="mail_port">{{ __('MAIL_PORT') }}</label>
-                            <input type="text" class="form-control" name="mail_port"
-                            @if($mail_config->has('mail_port')) 
-                                value="{{ $mail_config->get('mail_port')->value }}"
-                            @else
-                                value={{ env('MAIL_PORT') }}
-                            @endif
-                            required>
-
-                            @if ($errors->has('mail_port'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('mail_port') }}</strong>
                                 </span>
                             @endif
                         </div>
@@ -114,6 +80,23 @@
                             @if ($errors->has('mail_encryption'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('mail_encryption') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+
+                        <div class="form-group{{ $errors->has('mail_port') ? ' has-error' : '' }}">
+                            <label for="mail_port">{{ __('MAIL_PORT') }}</label>
+                            <input type="text" class="form-control" name="mail_port"
+                            @if($mail_config->has('mail_port')) 
+                                value="{{ $mail_config->get('mail_port')->value }}"
+                            @else
+                                value={{ env('MAIL_PORT') }}
+                            @endif
+                            required>
+
+                            @if ($errors->has('mail_port'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('mail_port') }}</strong>
                                 </span>
                             @endif
                         </div>
