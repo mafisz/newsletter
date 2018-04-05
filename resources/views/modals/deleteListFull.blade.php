@@ -11,6 +11,7 @@
                 @csrf
                 <div class="modal-body">
                     <p>{{ __('Are You sure to delete list') }} <strong class="text-danger delete-name"></strong> ?</p>
+                    <p>{{ __('All campaign connected with this list will be deleted') }}</p>
                     <input type="hidden" class="delete-id" name="listId">
                 </div>
                 <div class="modal-footer">
