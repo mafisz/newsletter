@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Member;
 use App\MemberList;
 use App\ListMember;
+use App\Campaign;
 
 class ListController extends Controller
 {
@@ -75,6 +76,9 @@ class ListController extends Controller
             'listId' => 'required|exists:member_lists,id',
         ]);
 
+        // usunięcie kampani z tą listą
+        $campaigns = Campaign::where('list_id', $request->listId)->delete();
+
         $list = MemberList::where('id', $request->listId)->first()->delete();
 
         return redirect()->back()->with('success', __('List has been deleted'));
@@ -90,6 +94,9 @@ class ListController extends Controller
         $this->validate($request, [
             'listId' => 'required|exists:member_lists,id',
         ]);
+
+        // usunięcie kampani z tą listą
+        $campaigns = Campaign::where('list_id', $request->listId)->delete();
 
         $list = MemberList::where('id', $request->listId)->first();
 
