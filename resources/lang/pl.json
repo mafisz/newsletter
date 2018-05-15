@@ -48,7 +48,7 @@
     "Member already subscribe this list": "Subskrybent należy już do wybranej listy",
     "Add members from file": "Dodaj subskrybentów z pliku",
     "File": "Plik",
-    ".txt file with comma separated emails": "Plik .txt z adresami email oddzielonymi przecinkami",
+    ".txt file with each address in new line": "Plik .txt z adresami email, każdy adres w nowej lini.",
     "New members count: :count": "Liczba nowych subskrybentów: :count",
     "Template": "Szablon",
     "Templates": "Szablony",

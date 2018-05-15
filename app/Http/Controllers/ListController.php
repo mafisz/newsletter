@@ -157,7 +157,7 @@ class ListController extends Controller
 
         $file = file_get_contents($request->file('file')->getPathName());
         $file_users = trim($file);
-        $file_users = explode(',', $file_users);
+        $file_users = explode(PHP_EOL, $file_users);
 
         $i = 0;
         foreach ($file_users as $email) {

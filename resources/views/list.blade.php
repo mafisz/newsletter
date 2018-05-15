@@ -81,7 +81,7 @@
                                 <input type="hidden" name="listId" value="{{ $list->id }}">
                                 <input type="file" class="form-control{{ $errors->has('file') ? ' is-invalid' : '' }}" name="file" required>
                                 <small class="form-text text-muted">
-                                    {{ __('.txt file with comma separated emails') }}
+                                    {{ __('.txt file with each address in new line') }}
                                 </small>
                                 @if ($errors->has('file'))
                                     <span class="invalid-feedback">
