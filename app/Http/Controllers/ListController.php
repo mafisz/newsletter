@@ -161,7 +161,7 @@ class ListController extends Controller
 
         $i = 0;
         foreach ($file_users as $email) {
-            $email_trimed = trim(str_replace("\r", "", $email));
+            $email_trimed = trim(str_replace("\r", "", str_replace("\n", "", $email)));
             $temp_request = new \Illuminate\Http\Request();
             $temp_request->replace(['email' => $email_trimed]);
 
