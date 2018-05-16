@@ -161,17 +161,18 @@ class ListController extends Controller
 
         $i = 0;
         foreach ($file_users as $email) {
+            $email_trimed = trim(str_replace("\r", "", $email));
             $temp_request = new \Illuminate\Http\Request();
-            $temp_request->replace(['email' => trim(str_replace("\r", "", $email))]);
+            $temp_request->replace(['email' => $email_trimed]);
 
             $this->validate($temp_request, [
                 'email' => 'required|string|email|max:255',
             ]);
 
-            $member = Member::where('email', $email)->first();
+            $member = Member::where('email', $email_trimed)->first();
             if(!$member){
                 $member = new Member();
-                $member->email = $email;
+                $member->email = $email_trimed;
                 $member->code = str_random(60);
                 $member->save();
             }
