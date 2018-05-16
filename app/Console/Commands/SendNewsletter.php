@@ -51,7 +51,7 @@ class SendNewsletter extends Command
             $list = MemberList::where('id', $campaign->list_id)->first();
             foreach ($list->members as $member) {
                 if($member->member->active)
-                    Mail::to($member->member->email)->queue(new Newsletter($campaign->title, $campaign->content, $member->member->email, $member->member->code));
+                    Mail::to(trim($member->member->email))->queue(new Newsletter($campaign->title, $campaign->content, trim($member->member->email), $member->member->code));
             }
 
             $campaign->send = 1;

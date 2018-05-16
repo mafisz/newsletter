@@ -162,7 +162,7 @@ class ListController extends Controller
         $i = 0;
         foreach ($file_users as $email) {
             $temp_request = new \Illuminate\Http\Request();
-            $temp_request->replace(['email' => str_replace("\r", "", $email)]);
+            $temp_request->replace(['email' => trim(str_replace("\r", "", $email))]);
 
             $this->validate($temp_request, [
                 'email' => 'required|string|email|max:255',
